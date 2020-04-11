@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
+    "start": "nodemon",
     "production": "pm2 start src/loader.js --name my-money-backend"
   },
   "dependencies": {
