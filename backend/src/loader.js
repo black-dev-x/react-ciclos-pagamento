@@ -1,1 +1,2 @@
-console.log('aplicação')
+require('./config/server')
+require('./config/database')
