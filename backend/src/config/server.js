@@ -1,11 +1,10 @@
 const express = require('express')
-
-const routes = require('./routes')
-
-const port = 3003
+const billingCycleService = require('../api/billingCycle/billingCycleService')
 
 const app = express()
 app.use(express.json())
-routes(app)
-app.listen(port, _ => console.log('Servidor esta rodando'))
-module.exports = app
+
+const router = express.Router()
+app.use('/api', router)
+billingCycleService.register(router, '/billingCycles')
+app.listen(3003, _ => console.log('Servidor esta rodando'))
